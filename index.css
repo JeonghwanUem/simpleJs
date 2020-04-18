@@ -1,0 +1,20 @@
+body{
+
+    background-color: grey;
+  }
+h{
+    color: aqua;
+}
+
+.clicked{
+    color: azure;
+}
+
+.form,
+.greetings{
+     display: none;
+}
+
+.showing{
+    display: block;
+}
