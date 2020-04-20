@@ -8,7 +8,7 @@ const toDos = [];
 
 function saveToDos(){
     console.log(`test this shit ${toDos}`);
-    localStorage.setItem(TODOS_LS,toDos);
+    localStorage.setItem(TODOS_LS,JSON.stringify(toDos));
 }
 
 function paintTodo(text){
@@ -36,12 +36,15 @@ function handleSubmit(event){
     paintTodo(currentValue);
     toDoInput.value ='';
 }
-    
 
 function loadTodos(){
     const loadedTodos = localStorage.getItem(TODOS_LS);
     if(loadedTodos !== null){
-        
+        console.log(loadedTodos);
+        const parsedTodos = JSON.parse(loadedTodos);
+        parsedTodos.forEach(function(toDo){
+            paintTodo(toDo.text);
+        });
     }else{
         
     }
